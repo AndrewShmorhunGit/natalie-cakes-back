@@ -3,16 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.app = void 0;
 const express_1 = __importDefault(require("express"));
-const dotenv_1 = __importDefault(require("dotenv"));
-const http_1 = __importDefault(require("http"));
-dotenv_1.default.config();
+const contents_router_1 = require("./routes/contents/contents.router");
 const app = (0, express_1.default)();
-const port = process.env.PORT || 8080;
-const server = http_1.default.createServer(app);
+exports.app = app;
+app.use(express_1.default.json());
+app.use(contents_router_1.contentsRouter);
 app.get("/", (req, res) => {
     res.send("Natalie Cakes Server");
-});
-server.listen(port, () => {
-    console.log(`[server]: Server is running at http://localhost:${port}`);
 });
