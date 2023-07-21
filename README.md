@@ -1,2 +1,7 @@
-# natalie-cakes-back
-server side of natalie-cakes-web
+# Natalie Cakes Web Server
+
+### Tech are used:
+
+- Node.js with Typescript
+- Express
+- Dotenv configuration

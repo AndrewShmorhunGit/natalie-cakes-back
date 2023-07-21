@@ -4,11 +4,17 @@
   "description": "server side of natalie-cakes-web",
   "main": "src/server.ts",
   "scripts": {
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q src/server.ts\"",
+    "push": "cross-env-shell \"git push $GIT_SSH",
     "start": "node src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "  concurrently \"npx tsc --watch\" \"nodemon -q src/server.ts\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndrewShmorhunGit/natalie-cakes-back",
+    "ssh": "git@github.com:AndrewShmorhunGit/natalie-cakes-back.git"
+  },
   "author": "Andrew Shmorhun",
   "license": "ISC",
   "dependencies": {
